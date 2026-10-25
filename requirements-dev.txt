@@ -1,0 +1,3 @@
+# Test tools. Keep pytest identical to [project.optional-dependencies].dev in pyproject.toml.
+-r requirements.txt
+pytest==9.1.1

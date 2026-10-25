@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bogus-security-answers"
+version = "1.0.0"
+description = "Local vault for unique answers to account security questions"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "argon2-cffi==25.1.0",
+    "cryptography==50.0.2",
+    "customtkinter==6.0.0",
+    "Faker==40.43.0",
+    "httpx==0.28.1",
+    "rapidfuzz==3.14.6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1"]
+
+[project.scripts]
+bogus-security-answers = "bogus_security_answers.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
